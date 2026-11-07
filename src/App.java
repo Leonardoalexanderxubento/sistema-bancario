@@ -68,6 +68,10 @@ public class App {
                         if (destino == null) {
                             break;
                         }
+                        if (destino == conta) {
+                            System.out.println("Escolha uma conta diferente.");
+                            continue;
+                        }
 
                         Double valor = lerValor(sc);
                         if (valor == null) {
