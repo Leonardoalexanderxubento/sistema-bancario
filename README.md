@@ -1,18 +1,72 @@
-## Getting Started
+# 🏦 Sistema Bancário
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Sistema bancário simples em Java, executado pelo terminal. Projeto feito para praticar os conceitos de Programação Orientada a Objetos (POO).
 
-## Folder Structure
+## Funcionalidades
 
-The workspace contains two folders by default, where:
+- Criar várias contas
+- Depositar
+- Sacar (com verificação de saldo)
+- Transferir entre contas
+- Ver extrato com todas as movimentações
+- Validação de entradas (números inválidos, valores negativos, opções fora da lista)
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Tecnologias
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+- Java 21
+- VS Code com Extension Pack for Java
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## Conceitos praticados
 
-## Dependency Management
+- Classes e objetos
+- Encapsulamento (atributos `private` e métodos `get`)
+- Construtores
+- Listas com `ArrayList`
+- Laços (`while`, `for`)
+- Leitura do teclado com `Scanner`
+- Tratamento de erros com `try/catch`
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Estrutura
+
+```
+sistema-bancario/
+├── src/
+│   ├── App.java     # menu e interação com o usuário
+│   └── Conta.java   # regras da conta (saldo, depósito, saque, extrato)
+└── README.md
+```
+
+## Como executar
+
+1. Tenha o **JDK 17 ou superior** instalado.
+2. Clone o repositório:
+   ```bash
+   git clone https://github.com/Leonardoalexanderxubento/sistema-bancario.git
+   ```
+3. Entre na pasta `src` e compile:
+   ```bash
+   cd sistema-bancario/src
+   javac App.java Conta.java
+   ```
+4. Execute:
+   ```bash
+   java App
+   ```
+
+## Exemplo de uso
+
+```
+1 - Criar conta
+2 - Depositar
+3 - Sacar
+4 - Transferir
+5 - Extrato
+0 - Sair
+Opção: 1
+Nome do titular: Maria
+Conta criada!
+```
+
+
+
+
