@@ -8,11 +8,12 @@ String nome = sc.nextLine();
 Conta c = new Conta(nome);
 
 int opcao = 0;
-while (opcao != 4) {   // repete até escolher 4
+while (opcao != 5)  {   
     System.out.println("\n1 - Depositar");
     System.out.println("2 - Sacar");
     System.out.println("3 - Ver saldo");
-    System.out.println("4 - Sair");
+    System.out.println("4 - Extrato");
+    System.out.println("5 - Sair");
     System.out.print("Opção: ");
     opcao = sc.nextInt();
 
@@ -24,7 +25,10 @@ while (opcao != 4) {   // repete até escolher 4
         c.sacar(sc.nextDouble());
     } else if (opcao == 3) {
         System.out.println(c.getTitular() + " tem R$ " + c.getSaldo());
+    } else if (opcao == 4) {
+    c.mostrarExtrato();    
     }
+
 }
 
 System.out.println("Até logo!");

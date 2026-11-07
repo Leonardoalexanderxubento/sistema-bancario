@@ -1,25 +1,45 @@
+import java.util.ArrayList;
+
 public class Conta {
-    // atributos: o que a conta TEM
     private String titular;
     private double saldo;
+    private ArrayList<String> extrato;   // lista de movimentações
 
-    // construtor: roda quando a conta é criada
     public Conta(String titular) {
         this.titular = titular;
         this.saldo = 0;
+        this.extrato = new ArrayList<>();
     }
 
-    // métodos: o que a conta FAZ
     public void depositar(double valor) {
         saldo = saldo + valor;
+        extrato.add("Depósito: +R$ " + valor);
     }
 
-    public void sacar(double valor) {
+    // agora devolve true (deu certo) ou false (não deu)
+    public boolean sacar(double valor) {
         if (valor <= saldo) {
             saldo = saldo - valor;
-        } else {
-            System.out.println("Saldo insuficiente!");
+            extrato.add("Saque: -R$ " + valor);
+            return true;
         }
+        System.out.println("Saldo insuficiente!");
+        return false;
+    }
+
+    public void transferir(Conta destino, double valor) {
+        if (this.sacar(valor)) {           // só deposita se o saque der certo
+            destino.depositar(valor);
+            extrato.add("Transferência para " + destino.getTitular());
+        }
+    }
+
+    public void mostrarExtrato() {
+        System.out.println("--- Extrato de " + titular + " ---");
+        for (String linha : extrato) {     // passa por cada item da lista
+            System.out.println(linha);
+        }
+        System.out.println("Saldo: R$ " + saldo);
     }
 
     public double getSaldo() {
